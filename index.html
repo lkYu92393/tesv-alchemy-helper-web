@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESV Skyrim Alchemy Helper</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div>
+        <div>
+            <div class="logo">
+                <img src="https://www.seekpng.com/png/full/143-1437955_skyrim-logo-elder-scrolls-symbol.png" />
+            </div>
+            <!-- <img src="https://e7.pngegg.com/pngimages/461/1016/png-clipart-the-elder-scrolls-v-skyrim-logo-video-game-decal-others-emblem-elder-scrolls.png" /> -->
+            <input id="filter" oninput="applyFilter(this);" />
+            <div id="selected">
+            </div>
+            <select id="effects">
+            </select>
+            <button onclick="addEffect();" >Add</button>
+    
+            <div>
+                Possible Ingredients:
+                <ul id="ingredientsWithEffects">
+    
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="ingredients.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>
