@@ -14,19 +14,28 @@
                 <img src="https://www.seekpng.com/png/full/143-1437955_skyrim-logo-elder-scrolls-symbol.png" />
             </div>
             <!-- <img src="https://e7.pngegg.com/pngimages/461/1016/png-clipart-the-elder-scrolls-v-skyrim-logo-video-game-decal-others-emblem-elder-scrolls.png" /> -->
-            <input id="filter" oninput="applyFilter(this);" />
-            <div id="selected">
-            </div>
-            <select id="effects">
-            </select>
-            <button onclick="addEffect();" >Add</button>
-    
-            <div>
+
+            <section>
+                Filter:
+                <input id="filter" oninput="applyFilter(this);" />
+                <select id="effects">
+                </select>
+                <button onclick="addEffect();" >Add</button>
+            </section>
+            <section>
+                <div>
+                    Selected Effect:
+                </div>
+                <div id="selected">
+                </div>
+            </section>
+
+            <section>
                 Possible Ingredients:
                 <ul id="ingredientsWithEffects">
     
                 </ul>
-            </div>
+            </section>
         </div>
     </div>
 </body>

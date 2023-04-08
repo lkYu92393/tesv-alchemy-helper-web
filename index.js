@@ -21,19 +21,28 @@ const addEffect = () => {
     }
     const text = effectElem.value;
     selected.push(text);
-    selectedElem.innerHTML = selected.map(effect => `<div>${effect}<button onclick='removeEffect("${effect}");'>Remove</button></div>`).join("");
 
+    repopulateEffectList();
     repopulateIngredientList();
 }
 
 const removeEffect = (effect) => {
     selected.splice(selected.indexOf(effect), 1);
-    selectedElem.innerHTML = selected.map(effect => `<div>${effect}<button onclick='removeEffect("${effect}");'>Remove</button></div>`).join("");
 
+    repopulateEffectList();
     repopulateIngredientList();
 }
 
+const repopulateEffectList = () => {
+    selectedElem.innerHTML = selected.map(effect => `<div class="effect">${effect}<button onclick='removeEffect("${effect}");'>Remove</button></div>`).join("");
+}
+
 const repopulateIngredientList = () => {
+    if (selected.length  == 0) {
+        ingredientElem.innerHTML = "";
+        return;
+    }
+    
     const filterIngredients = ingredients["ingredients"].filter(ingredient => selected.reduce((accumulator, curr) => accumulator && ingredient.effects.includes(curr), true));
     if (filterIngredients.length > 0) {
         ingredientElem.innerHTML = filterIngredients.map(ingredient => ingredient.name).map(name => `<li>${name}</li>`).join("");
