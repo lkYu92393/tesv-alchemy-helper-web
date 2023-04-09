@@ -1,13 +1,16 @@
-
-
 const selected = [];
 
+const filterElem = document.getElementById('filter');
 const effectElem = document.getElementById("effects");
 const selectedElem = document.getElementById("selected");
 const ingredientElem = document.getElementById("ingredientsWithEffects");
 
-const applyFilter = (elem) => {
-    const filterEffects = effects.filter(eff => eff.toLowerCase().indexOf(elem.value.toLowerCase()) > -1);
+const applyFilter = () => {
+    let filterEffects = effects;
+    if (!!filterElem.value) {
+        filterEffects = filterEffects.filter(eff => eff.toLowerCase().indexOf(elem.value.toLowerCase()) > -1)
+    }
+
     if (filterEffects.length > 0) {
         effectElem.innerHTML = filterEffects.map(effect => `<option value="${effect}">${effect}</option>`);
     } else {
@@ -23,6 +26,7 @@ const addEffect = () => {
     selected.push(text);
 
     repopulateEffectList();
+    repopulateSelectedList();
     repopulateIngredientList();
 }
 
@@ -30,10 +34,13 @@ const removeEffect = (effect) => {
     selected.splice(selected.indexOf(effect), 1);
 
     repopulateEffectList();
+    repopulateSelectedList();
     repopulateIngredientList();
 }
 
-const repopulateEffectList = () => {
+const repopulateEffectList = () => {}
+
+const repopulateSelectedList = () => {
     selectedElem.innerHTML = selected.map(effect => `<div class="effect">${effect}<button onclick='removeEffect("${effect}");'>Remove</button></div>`).join("");
 }
 
@@ -45,7 +52,7 @@ const repopulateIngredientList = () => {
     
     const filterIngredients = ingredients["ingredients"].filter(ingredient => selected.reduce((accumulator, curr) => accumulator && ingredient.effects.includes(curr), true));
     if (filterIngredients.length > 0) {
-        ingredientElem.innerHTML = filterIngredients.map(ingredient => ingredient.name).map(name => `<li>${name}</li>`).join("");
+        ingredientElem.innerHTML = filterIngredients.map(ingredient => `<li><div>${ingredient.name}</div><div>${ingredient.effects.join(", ")}</div></li>`).join("");
     } else {
         ingredientElem.innerHTML = "<li>No matches</li>"
     }

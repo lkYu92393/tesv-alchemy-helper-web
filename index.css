@@ -24,6 +24,7 @@ body > div > div {
     margin: 0px auto;
     padding: 50px 50px;
     color: white;
+    overflow-y: scroll;
 }
 
 div.logo {

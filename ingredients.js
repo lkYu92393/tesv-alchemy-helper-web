@@ -1095,6 +1095,6 @@ const ingredients = {
     ]
 }
 
-const effects = ['Cure Disease', 'Damage Health', 'Damage Magicka', 'Damage Magicka Regen', 'Damage Stamina', 'Damage Stamina Regen', 'Fear', 'Fortify Alteration', 'Fortify Barter', 'Fortify Block', 'Fortify Carry Weight', 'Fortify Conjuration', 'Fortify Destruction', 'Fortify Enchanting', 'Fortify Health', 'Fortify Heavy Armor', 'Fortify Illusion', 'Fortify Light Armor', 'Fortify Lockpicking', 'Fortify Magicka', 'Fortify Marksman', 'Fortify One-handed', 'Fortify Pickpocket', 'Fortify Restoration', 'Fortify Smithing', 'Fortify Sneak', 'Fortify Stamina', 'Fortify Two-handed', 'Frenzy', 'Invisibility', 'Lingering Damage Health', 'Lingering Damage Magicka', 'Lingering Damage Stamina', 'Paralysis', 'Ravage Health', 'Ravage Magicka', 'Ravage Stamina', 'Regenerate Health', 'Regenerate Magicka', 'Regenerate Stamina', 'Resist Fire', 'Resist Frost', 'Resist Magic', 'Resist Poison', 'Resist Shock', 'Restore Health', 'Restore Magicka', 'Restore Stamina', 'Slow', 'Waterbreathing', 'Weakness to Fire', 'Weakness to Frost', 'Weakness to Magic', 'Weakness to Poison', 'Weakness to Shock'];
+const effects = ingredients["ingredients"].map(obj => obj.effects).reduce((a,b) => a.concat(b), []).filter((item, i, ar) => ar.indexOf(item) === i).sort();
 
 // export { ingredients, effects };
