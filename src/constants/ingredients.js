@@ -1101,4 +1101,4 @@ const ingredients = ingredientsData["ingredients"].reduce((dict, obj) => {
     return dict;
 }, {});
 
-export { ingredients, effects };
+export { ingredientsData, ingredients, effects };

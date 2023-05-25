@@ -1,4 +1,4 @@
-import { ingredients } from "../constants/ingredients"
+import { ingredients } from "../constants/ingredients";
 
 const ingredientsName = Object.keys(ingredients);
 let filteredIngredientsName = ingredientsName;
@@ -53,4 +53,4 @@ const ingredientBrowserInit = () => {
     ingredientBrowserElemEventHandler();
 }
 
-export { ingredientBrowserInit };
+export default ingredientBrowserInit;
