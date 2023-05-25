@@ -1,4 +1,4 @@
-const ingredients = {
+const ingredientsData = {
     "ingredients": [
         {
             "effects": [
@@ -1095,6 +1095,10 @@ const ingredients = {
     ]
 }
 
-const effects = ingredients["ingredients"].map(obj => obj.effects).reduce((a,b) => a.concat(b), []).filter((item, i, ar) => ar.indexOf(item) === i).sort();
+const effects = ingredientsData["ingredients"].map(obj => obj.effects).reduce((a,b) => a.concat(b), []).filter((item, i, ar) => ar.indexOf(item) === i).sort();
+const ingredients = ingredientsData["ingredients"].reduce((dict, obj) => {
+    dict[obj.name] = obj.effects;
+    return dict;
+}, {});
 
-// export { ingredients, effects };
+export { ingredients, effects };
