@@ -27,6 +27,7 @@ const repopulateIngredientSelect = () => {
     const targetElem = document.getElementById("ingredient-list");
     if (filteredIngredientsName.length > 0) {
         targetElem.innerHTML = filteredIngredientsName.map(name => `<option value="${name}">${name}</option>`);
+        retrieveEffects(targetElem.value);
     } else {
         targetElem.innerHTML = "<option value='' disabled selected>No matches</option>"
     }
