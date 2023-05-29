@@ -1,5 +1,5 @@
 import ingredientBrowserInit from "./module/ingredientBrowser";
-import effectBrowserInit, { innerRemoveEffect } from "./module/effectBrowser";
+import effectBrowserInit from "./module/effectBrowser";
 
 const logoDiv = `<div class="logo">
 <img src="https://www.seekpng.com/png/full/143-1437955_skyrim-logo-elder-scrolls-symbol.png" />
