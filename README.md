@@ -2,7 +2,7 @@
 
 Page: https://lkyu92393.github.io/tesv-alchemy-helper-web/
 
-It is a simply html with javascript.
+It is a simply html with javascript, bundled using webpack.
 
 # What this does?
 
