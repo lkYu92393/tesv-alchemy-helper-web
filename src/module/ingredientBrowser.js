@@ -4,15 +4,9 @@ const ingredientsName = Object.keys(ingredients);
 let filteredIngredientsName = ingredientsName;
 
 const ingredientBrowserElem = () => {
-    document.getElementById("ingredient").innerHTML = `
-    <div class="square-two">
-        <label>Ingredient Filter:</label>
-        <input id="ingredient-filter" />
-        <div></div>
-        <select id="ingredient-list"></select>
-    </div>
-    <div id="ingredient-effect" class="square-two"></div>
-    `
+    document.getElementById("ingredient").innerHTML = 
+    '<div class="square-two"><label>Ingredient Filter:</label><input id="ingredient-filter" />' +
+    '<div></div><select id="ingredient-list"></select></div><div id="ingredient-effect" class="square-two"></div>';
 }
 
 const filterIngredients = (text) => {

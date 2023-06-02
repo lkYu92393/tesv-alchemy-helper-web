@@ -4,26 +4,12 @@ let filteredEffects = effects;
 const selected = [];
 
 const effectBrowserElem = () => {
-    document.getElementById("effect-filter").innerHTML = `
-    Filter:
-    <input id="filter" />
-    <select id="effects">
-    </select>
-    <button id="effect-button">Add</button>
-    `
-    document.getElementById("select-effect").innerHTML = `
-    <div>
-        Selected Effect:
-    </div>
-    <div id="selected" class="square-two">
-    </div>
-    `
-    document.getElementById("possible-ingredient").innerHTML = `
-    Possible Ingredients:
-    <ul id="ingredientsWithEffects">
-
-    </ul>
-    `
+    document.getElementById("effect-filter").innerHTML = 
+    `Filter:<input id="filter" /><select id="effects"></select><button id="effect-button">Add</button>`
+    document.getElementById("select-effect").innerHTML = 
+    `<div>Selected Effect:</div><div id="selected" class="square-two"></div>`
+    document.getElementById("possible-ingredient").innerHTML = 
+    `Possible Ingredients:<ul id="ingredientsWithEffects"></ul>`
 }
 
 const filterEffects = (text) => {
@@ -72,7 +58,7 @@ const effectBrowserEventHandler = () => {
         filterEffects(event.target.value);
         repopulateEffectSelect();
     });
-    
+
     document.getElementById("effect-button").addEventListener("click", () => {
         const effectElem = document.getElementById("effects");
         if (selected.length >= 4 || selected.includes(effectElem.value)) {
