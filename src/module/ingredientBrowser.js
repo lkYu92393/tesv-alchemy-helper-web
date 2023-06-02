@@ -16,11 +16,9 @@ const ingredientBrowserElem = () => {
 }
 
 const filterIngredients = (text) => {
-    if (!text) {
-        filteredIngredientsName = ingredientsName;
-    } else {
-        filteredIngredientsName = ingredientsName.filter(name => name.toLowerCase().indexOf(text.toLowerCase()) > -1);
-    }
+    filteredIngredientsName = !test 
+                            ? ingredientsName 
+                            : ingredientsName.filter(name => name.toLowerCase().indexOf(text.toLowerCase()) > -1);
 }
 
 const repopulateIngredientSelect = () => {

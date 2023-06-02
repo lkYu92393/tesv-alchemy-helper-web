@@ -32,11 +32,9 @@ const filterEffects = (text) => {
 
 const repopulateEffectSelect = () => {
     const targetElem = document.getElementById("effects");
-    if (filterEffects.length > 0) {
-        targetElem.innerHTML = filteredEffects.map(effect => `<option value="${effect}">${effect}</option>`);
-    } else {
-        targetElem.innerHTML = "<option value='' disabled selected>No matches</option>"
-    }
+    targetElem.innerHTML = filteredEffects.length > 0
+                         ? filteredEffects.map(effect => `<option value="${effect}">${effect}</option>`)
+                         : "<option value='' disabled selected>No matches</option>";
 }
 
 const repopulateSelectedList = () => {
@@ -50,17 +48,15 @@ const repopulateSelectedList = () => {
 
 const repopulateIngredientList = () => {
     const ingredientElem = document.getElementById("ingredientsWithEffects");
-    if (selected.length  == 0) {
+    if (selected.length == 0) {
         ingredientElem.innerHTML = "";
         return;
     }
     
     const filterIngredients = ingredientsData["ingredients"].filter(ingredient => selected.reduce((accumulator, curr) => accumulator && ingredient.effects.includes(curr), true));
-    if (filterIngredients.length > 0) {
-        ingredientElem.innerHTML = filterIngredients.map(ingredient => `<li><div>${ingredient.name}</div><div>${ingredient.effects.join(", ")}</div></li>`).join("");
-    } else {
-        ingredientElem.innerHTML = "<li>No matches</li>"
-    }
+    ingredientElem.innerHTML = filterIngredients.length > 0
+                             ? filterIngredients.map(ingredient => `<li><div>${ingredient.name}</div><div>${ingredient.effects.join(", ")}</div></li>`).join("")
+                             : "<li>No matches</li>";
 }
 
 const removeEffect = (event) => {
@@ -76,6 +72,7 @@ const effectBrowserEventHandler = () => {
         filterEffects(event.target.value);
         repopulateEffectSelect();
     });
+    
     document.getElementById("effect-button").addEventListener("click", () => {
         const effectElem = document.getElementById("effects");
         if (selected.length >= 4 || selected.includes(effectElem.value)) {
