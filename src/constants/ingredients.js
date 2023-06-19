@@ -1095,7 +1095,7 @@ const ingredientsData = {
     ]
 }
 
-const url = "";
+const url = "http://www.uesp.net/w/images/thumb";
 
 const effects = ingredientsData["ingredients"].map(obj => obj.effects)
     .reduce((a, b) => a.concat(b), [])

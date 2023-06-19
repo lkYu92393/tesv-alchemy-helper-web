@@ -1,7 +1,7 @@
 import ingredientBrowserInit from "./module/ingredientBrowser";
 import effectBrowserInit from "./module/effectBrowser";
 
-const logoDiv = `<div class="logo"><img src="https://www.seekpng.com/png/full/143-1437955_skyrim-logo-elder-scrolls-symbol.png" /></div>`;
+const logoDiv = `<div class="logo"><img src="./resources/skyrim_symbol.png" alt="https://www.seekpng.com/png/full/143-1437955_skyrim-logo-elder-scrolls-symbol.png" /></div>`;
 
 document.addEventListener("DOMContentLoaded",() => {
     const divElem = document.getElementById("content");
